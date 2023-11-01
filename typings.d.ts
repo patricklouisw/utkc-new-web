@@ -9,7 +9,7 @@ type Base = {
 interface Post extends Base {
     author: Author;
     body: Block[];
-    categories: Category[];
+    postCategory: Category[];
     mainImage: Image;
     slug: Slug;
     title: string;
@@ -66,4 +66,10 @@ interface MainImage {
 interface Title {
     _type: "string";
     current: string;
+}
+
+type SideBarTitle = {
+    _id: string;
+    title: string;
+    slug: Slug
 }

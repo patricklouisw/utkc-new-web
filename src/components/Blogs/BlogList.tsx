@@ -9,7 +9,7 @@ type Props = {
 };
 
 const BlogList = ({ posts, gridClass, cardHeight }: Props) => {
-  // console.log(posts);
+  console.log(posts);
 
   if (!gridClass) {
     gridClass = `grid-cols-1 md:grid-cols-2`;
@@ -57,14 +57,15 @@ const BlogList = ({ posts, gridClass, cardHeight }: Props) => {
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-end md:items-center md:justify-end flex-wrap">
-                  {post.categories.map((category) => (
-                    <div
-                      key={category._id}
-                      className="odd:bg-red-600/70 even:bg-blue-600/70 text-center text-white px-3 py-1 rounded-full text-sm font-semibold"
-                    >
-                      {category.title}
-                    </div>
-                  ))}
+                  {post.postCategory &&
+                    post.postCategory.map((category) => (
+                      <div
+                        key={category._id}
+                        className="odd:bg-red-600/70 even:bg-blue-600/70 text-center text-white px-3 py-1 rounded-full text-sm font-semibold"
+                      >
+                        {category.title}
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>

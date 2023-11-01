@@ -58,7 +58,7 @@ const Header = () => {
         </Link>
         <div className="flex items-center gap-10">
           <Link
-            href="/about"
+            href="/about/about-us"
             className="font-medium text-lg text-black hover:opacity-90"
           >
             About

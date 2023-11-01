@@ -18,7 +18,7 @@ const Post = async ({ params: { slug } }: Props) => {
       *[_type=='post' && slug.current == $slug][0]{
           ...,
           author->,
-          categories[]->
+          postCategory[]->
       }
   `;
 
@@ -26,7 +26,7 @@ const Post = async ({ params: { slug } }: Props) => {
 *[_type=='post']{
   ...,
   author->,
-  categories[]->
+  postCategory[]->
 } | order(_createdAt desc)
 `;
 
@@ -84,7 +84,7 @@ const Post = async ({ params: { slug } }: Props) => {
               <div className="flex justify-between gap-5">
                 <h2 className="italic pt-2">{post.description}</h2>
                 <div className="flex items-center justify-end mt-auto space-x-2">
-                  {post.categories.map((category) => (
+                  {post.postCategory.map((category) => (
                     <div
                       key={category._id}
                       className="odd:bg-red-600/70 even:bg-blue-600/70 text-center text-white px-3 py-1 rounded-full text-sm font-semibold"
